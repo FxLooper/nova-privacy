@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova — Privacy Policy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f0e8; color: #1a1a2e; line-height: 1.7; }
+        .container { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
+        h1 { font-size: 28px; font-weight: 300; letter-spacing: 6px; text-transform: lowercase; margin-bottom: 8px; }
+        h2 { font-size: 18px; font-weight: 600; margin-top: 36px; margin-bottom: 12px; opacity: 0.85; }
+        h3 { font-size: 15px; font-weight: 600; margin-top: 24px; margin-bottom: 8px; opacity: 0.75; }
+        p, li { font-size: 14px; opacity: 0.7; margin-bottom: 8px; }
+        ul { padding-left: 20px; }
+        .meta { font-size: 12px; opacity: 0.4; margin-bottom: 40px; }
+        strong { opacity: 1; }
+        a { color: #1a1a2e; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>nova</h1>
+    <p class="meta">Privacy Policy &mdash; Last updated: 2026-04-25 &mdash; App version: 13.4.7</p>
+
+    <h2>Summary</h2>
+    <p>Nova is a personal voice assistant. The app on your iPhone is a client &mdash; all your data is processed on <strong>your own private Nova backend server</strong> which you control. We (the app developer) do not run any cloud service, do not collect telemetry, and do not have access to your conversations, voice recordings, or location.</p>
+    <p>If you use the <strong>Demo / Guest mode</strong>, no server connection is made and no data leaves your device.</p>
+
+    <h2>What data the app handles</h2>
+
+    <h3>Audio (microphone)</h3>
+    <ul>
+        <li><strong>Why:</strong> to transcribe what you say and recognize who is speaking (Voice ID).</li>
+        <li><strong>Where it goes:</strong> sent over an encrypted connection to <strong>your own Nova backend</strong> for transcription. Voice ID enrollment samples and the resulting profile are stored on your backend.</li>
+        <li><strong>What we do not do:</strong> we do not send audio to any third party, we do not retain audio after transcription, we do not train any model with your voice.</li>
+    </ul>
+
+    <h3>Speech recognition (on-device)</h3>
+    <p>The wake word ("Hey Nova", "Hi Nova", "Ahoj Nova", "Ok Nova") runs <strong>entirely on your device</strong>. Audio used for wake word detection never leaves the iPhone.</p>
+
+    <h3>Photos and videos</h3>
+    <ul>
+        <li><strong>Why:</strong> when you ask Nova to describe a photo, read text, or analyze a video.</li>
+        <li><strong>Where it goes:</strong> to <strong>your own Nova backend</strong> only.</li>
+        <li><strong>Limit:</strong> videos up to 200 MB.</li>
+    </ul>
+
+    <h3>Location</h3>
+    <ul>
+        <li><strong>Why:</strong> so Nova can answer "what's the weather here", "find the nearest pharmacy", etc.</li>
+        <li><strong>When:</strong> only while the app is in use, only when a query needs it.</li>
+        <li><strong>Where it goes:</strong> to <strong>your own Nova backend</strong> as a coarse coordinate. Coordinates are <strong>not written to any local log</strong>.</li>
+    </ul>
+
+    <h3>Notifications</h3>
+    <p>Used for scheduled tasks and Live Activity / Dynamic Island updates. No content is sent through Apple Push servers.</p>
+
+    <h3>Camera</h3>
+    <p>Only when you explicitly tap the camera button to capture a photo for Nova to analyze.</p>
+
+    <h3>Local network</h3>
+    <p>Nova connects to your Nova backend on your local network or via Tailscale VPN. We do not scan the network for any other purpose.</p>
+
+    <h2>Data we do NOT collect</h2>
+    <ul>
+        <li>No analytics SDK, no crash reporter, no advertising ID.</li>
+        <li>No account on any server we run &mdash; there is no "Nova cloud".</li>
+        <li>No third-party tracking.</li>
+    </ul>
+
+    <h2>Where data is stored</h2>
+    <ul>
+        <li><strong>On your iPhone:</strong> backend server URL, voice ID profile, conversation history, keychain credentials.</li>
+        <li><strong>On your Nova backend:</strong> whatever your backend configuration retains. You control this.</li>
+        <li><strong>Nowhere else.</strong></li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>Nova is rated 4+ but is intended for general audiences. We do not knowingly collect data from children because we do not collect data at all.</p>
+
+    <h2>Your choices</h2>
+    <ul>
+        <li>Revoke microphone, camera, location, photos, or notifications at any time in iOS Settings &rarr; Nova.</li>
+        <li>Use <strong>Demo / Guest mode</strong> to try the app with zero network connections.</li>
+        <li>Delete the app to remove all locally stored data.</li>
+    </ul>
+
+    <h2>Encryption</h2>
+    <p>All connections use TLS / HTTPS. Backend credentials are stored in iOS Keychain. The app uses only standard Apple cryptography (<code>ITSAppUsesNonExemptEncryption = false</code>).</p>
+
+    <h2>Changes</h2>
+    <p>If we change this policy, the "Last updated" date will change. Material changes will be announced in release notes.</p>
+
+    <h2>Contact</h2>
+    <p><strong>Developer:</strong> Ondrej Hladik (FxLooper)<br>
+    <strong>Email:</strong> <a href="mailto:fxlooper.business@gmail.com">fxlooper.business@gmail.com</a></p>
+</div>
+</body>
+</html>
