@@ -12,89 +12,192 @@
         h2 { font-size: 18px; font-weight: 600; margin-top: 36px; margin-bottom: 12px; opacity: 0.85; }
         h3 { font-size: 15px; font-weight: 600; margin-top: 24px; margin-bottom: 8px; opacity: 0.75; }
         p, li { font-size: 14px; opacity: 0.7; margin-bottom: 8px; }
-        ul { padding-left: 20px; }
+        ul, ol { padding-left: 20px; }
         .meta { font-size: 12px; opacity: 0.4; margin-bottom: 40px; }
         strong { opacity: 1; }
         a { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(26,26,46,0.1); opacity: 0.7; }
+        th { opacity: 0.85; font-weight: 600; }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>nova</h1>
-    <p class="meta">Privacy Policy &mdash; Last updated: 2026-04-25 &mdash; App version: 13.4.7</p>
+    <p class="meta">Privacy Policy &mdash; Last updated: 2026-05-08 &mdash; App version: 28.4.0</p>
 
     <h2>Summary</h2>
-    <p>Nova is a personal voice assistant. The app on your iPhone is a client &mdash; all your data is processed on <strong>your own private Nova backend server</strong> which you control. We (the app developer) do not run any cloud service, do not collect telemetry, and do not have access to your conversations, voice recordings, or location.</p>
-    <p>If you use the <strong>Demo / Guest mode</strong>, no server connection is made and no data leaves your device.</p>
+    <p>Nova is a personal AI voice assistant. The Nova app on your iPhone connects to a Nova server operated by FxLooper (&ldquo;we&rdquo;, &ldquo;us&rdquo;). Your conversations are processed through our server using the Anthropic Claude AI API. We take your privacy seriously and comply with GDPR and applicable data protection laws.</p>
 
-    <h2>What data the app handles</h2>
+    <h2>Data Controller</h2>
+    <p><strong>FxLooper (Ond&#345;ej Hlad&iacute;k)</strong><br>
+    Email: <a href="mailto:fxlooper.business@gmail.com">fxlooper.business@gmail.com</a><br>
+    Based in: Czech Republic, EU</p>
+
+    <h2>What data we collect and why</h2>
+
+    <h3>Account data</h3>
+    <ul>
+        <li><strong>What:</strong> Name, email, city, language preference, timezone, subscription plan.</li>
+        <li><strong>Why:</strong> To personalize Nova&rsquo;s responses and manage your subscription.</li>
+        <li><strong>Legal basis:</strong> Contract performance (Art. 6(1)(b) GDPR).</li>
+    </ul>
+
+    <h3>Conversation data</h3>
+    <ul>
+        <li><strong>What:</strong> Text messages you send and Nova&rsquo;s responses.</li>
+        <li><strong>Why:</strong> To provide AI assistant functionality and maintain conversation context.</li>
+        <li><strong>Retention:</strong> Stored on our server for 90 days, then automatically deleted. You can delete anytime.</li>
+        <li><strong>Legal basis:</strong> Contract performance.</li>
+    </ul>
 
     <h3>Audio (microphone)</h3>
     <ul>
-        <li><strong>Why:</strong> to transcribe what you say and recognize who is speaking (Voice ID).</li>
-        <li><strong>Where it goes:</strong> sent over an encrypted connection to <strong>your own Nova backend</strong> for transcription. Voice ID enrollment samples and the resulting profile are stored on your backend.</li>
-        <li><strong>What we do not do:</strong> we do not send audio to any third party, we do not retain audio after transcription, we do not train any model with your voice.</li>
+        <li><strong>What:</strong> Voice input for speech-to-text.</li>
+        <li><strong>Processing:</strong> Speech recognition runs <strong>on your iPhone</strong> using WhisperKit (on-device). Raw audio is <strong>never sent</strong> to our server or any third party. Only the transcribed text is sent.</li>
+        <li><strong>Legal basis:</strong> Consent (microphone permission).</li>
     </ul>
 
-    <h3>Speech recognition (on-device)</h3>
-    <p>The wake word ("Hey Nova", "Hi Nova", "Ahoj Nova", "Ok Nova") runs <strong>entirely on your device</strong>. Audio used for wake word detection never leaves the iPhone.</p>
-
-    <h3>Photos and videos</h3>
+    <h3>Voice ID (optional)</h3>
     <ul>
-        <li><strong>Why:</strong> when you ask Nova to describe a photo, read text, or analyze a video.</li>
-        <li><strong>Where it goes:</strong> to <strong>your own Nova backend</strong> only.</li>
-        <li><strong>Limit:</strong> videos up to 200 MB.</li>
+        <li><strong>What:</strong> Voice profile for speaker verification.</li>
+        <li><strong>Processing:</strong> Stored on our server, used only to verify your identity.</li>
+        <li><strong>Legal basis:</strong> Consent (you choose to enroll).</li>
     </ul>
 
-    <h3>Location</h3>
+    <h3>Photos and videos (optional)</h3>
     <ul>
-        <li><strong>Why:</strong> so Nova can answer "what's the weather here", "find the nearest pharmacy", etc.</li>
-        <li><strong>When:</strong> only while the app is in use, only when a query needs it.</li>
-        <li><strong>Where it goes:</strong> to <strong>your own Nova backend</strong> as a coarse coordinate. Coordinates are <strong>not written to any local log</strong>.</li>
+        <li><strong>What:</strong> Images you send for Nova to analyze.</li>
+        <li><strong>Processing:</strong> Sent to our server &rarr; Anthropic Claude API for analysis &rarr; response returned &rarr; image deleted from server within 24 hours.</li>
+        <li><strong>Legal basis:</strong> Consent (you choose to send).</li>
     </ul>
 
-    <h3>Notifications</h3>
-    <p>Used for scheduled tasks and Live Activity / Dynamic Island updates. No content is sent through Apple Push servers.</p>
-
-    <h3>Camera</h3>
-    <p>Only when you explicitly tap the camera button to capture a photo for Nova to analyze.</p>
-
-    <h3>Local network</h3>
-    <p>Nova connects to your Nova backend on your local network or via Tailscale VPN. We do not scan the network for any other purpose.</p>
-
-    <h2>Data we do NOT collect</h2>
+    <h3>Location (optional)</h3>
     <ul>
-        <li>No analytics SDK, no crash reporter, no advertising ID.</li>
-        <li>No account on any server we run &mdash; there is no "Nova cloud".</li>
-        <li>No third-party tracking.</li>
+        <li><strong>What:</strong> Approximate location (city-level).</li>
+        <li><strong>Why:</strong> Weather, nearby places, local information.</li>
+        <li><strong>Processing:</strong> Used only for the specific query, not stored permanently.</li>
+        <li><strong>Legal basis:</strong> Consent (location permission).</li>
     </ul>
 
-    <h2>Where data is stored</h2>
+    <h3>Usage data</h3>
     <ul>
-        <li><strong>On your iPhone:</strong> backend server URL, voice ID profile, conversation history, keychain credentials.</li>
-        <li><strong>On your Nova backend:</strong> whatever your backend configuration retains. You control this.</li>
-        <li><strong>Nowhere else.</strong></li>
+        <li><strong>What:</strong> Token consumption per model (Opus/Sonnet/Haiku), number of API calls.</li>
+        <li><strong>Why:</strong> To enforce subscription limits and calculate costs.</li>
+        <li><strong>What we do NOT track:</strong> specific content of your messages, browsing history, app usage patterns.</li>
+        <li><strong>Legal basis:</strong> Legitimate interest (billing).</li>
+    </ul>
+
+    <h3>Push notification tokens</h3>
+    <ul>
+        <li><strong>What:</strong> Apple Push Notification device token.</li>
+        <li><strong>Why:</strong> To send you scheduled tasks, briefings, and proactive notifications.</li>
+        <li><strong>Legal basis:</strong> Consent (notification permission).</li>
+    </ul>
+
+    <h2>Third-party data processors</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>What they receive</th>
+                <th>Why</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Anthropic (Claude API)</strong></td>
+                <td>Anonymized conversation text</td>
+                <td>AI processing</td>
+            </tr>
+            <tr>
+                <td><strong>Apple (App Store)</strong></td>
+                <td>Subscription payment info</td>
+                <td>Payment processing</td>
+            </tr>
+            <tr>
+                <td><strong>Microsoft (Edge TTS)</strong></td>
+                <td>Text for speech synthesis</td>
+                <td>Text-to-speech</td>
+            </tr>
+            <tr>
+                <td><strong>Open-Meteo</strong></td>
+                <td>City name / coordinates</td>
+                <td>Weather data</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>We do <strong>NOT</strong> use: Google Analytics, Facebook SDK, advertising networks, crash reporters, or any other tracking tools.</p>
+
+    <h2>Your rights (GDPR)</h2>
+    <p>You have the right to:</p>
+    <ol>
+        <li><strong>Access</strong> &mdash; See all data we hold about you. Request via email or in-app.</li>
+        <li><strong>Rectification</strong> &mdash; Correct inaccurate data. Change your profile in Settings.</li>
+        <li><strong>Erasure (&ldquo;Right to be forgotten&rdquo;)</strong> &mdash; Delete all your data. In-app: Settings &rarr; Delete History. Full account deletion: email us.</li>
+        <li><strong>Data portability</strong> &mdash; Export your data in machine-readable format. In-app: Settings &rarr; Export Conversation.</li>
+        <li><strong>Restriction</strong> &mdash; Limit how we process your data. Email us.</li>
+        <li><strong>Object</strong> &mdash; Object to processing based on legitimate interest. Email us.</li>
+        <li><strong>Withdraw consent</strong> &mdash; Revoke permissions anytime in iOS Settings &rarr; Nova.</li>
+    </ol>
+    <p>We respond to all GDPR requests within <strong>30 days</strong>.</p>
+
+    <h2>Data deletion</h2>
+
+    <h3>In-app deletion</h3>
+    <ul>
+        <li><strong>Conversation history:</strong> Settings &rarr; Delete History (immediate, irreversible).</li>
+        <li><strong>Voice ID profile:</strong> Settings &rarr; Voice ID &rarr; Delete Profile.</li>
+        <li><strong>Push tokens:</strong> Uninstall the app.</li>
+    </ul>
+
+    <h3>Full account deletion</h3>
+    <p>Email <a href="mailto:fxlooper.business@gmail.com">fxlooper.business@gmail.com</a> with subject &ldquo;Delete my Nova account&rdquo;. We will delete all your data within 30 days and confirm by email.</p>
+
+    <h3>Automatic deletion</h3>
+    <ul>
+        <li>Conversation history: auto-deleted after 90 days.</li>
+        <li>Images/videos: deleted within 24 hours of processing.</li>
+        <li>Usage logs: retained for 12 months for billing, then deleted.</li>
+    </ul>
+
+    <h2>Data export</h2>
+    <p>In-app: Settings &rarr; Export Conversation &mdash; exports your full chat history as a text file. For a complete data export (including server-side data): email us.</p>
+
+    <h2>Data security</h2>
+    <ul>
+        <li>All connections use <strong>TLS/HTTPS</strong> encryption in transit.</li>
+        <li>Server credentials stored in <strong>iOS Keychain</strong> (hardware-encrypted).</li>
+        <li>Server access restricted by <strong>unique authentication tokens</strong> per client.</li>
+        <li>Client data <strong>isolated</strong> &mdash; each client can only access their own data.</li>
+        <li>No shared database &mdash; each client has separate storage.</li>
     </ul>
 
     <h2>Children</h2>
-    <p>Nova is rated 4+ but is intended for general audiences. We do not knowingly collect data from children because we do not collect data at all.</p>
+    <p>Nova is rated 4+ but subscription services are intended for users 16+. We do not knowingly collect data from children under 16. If you believe a child has provided us data, contact us and we will delete it.</p>
 
-    <h2>Your choices</h2>
+    <h2>International transfers</h2>
+    <p>Your data is processed on servers located in the <strong>European Union (Czech Republic)</strong>. If Anthropic processes data outside the EU, they do so under Standard Contractual Clauses (SCCs) as per their privacy policy.</p>
+
+    <h2>Data breach notification</h2>
+    <p>In the event of a data breach affecting your personal data, we will notify you via email and/or push notification within <strong>72 hours</strong> as required by GDPR Article 33.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We will notify you of material changes via:</p>
     <ul>
-        <li>Revoke microphone, camera, location, photos, or notifications at any time in iOS Settings &rarr; Nova.</li>
-        <li>Use <strong>Demo / Guest mode</strong> to try the app with zero network connections.</li>
-        <li>Delete the app to remove all locally stored data.</li>
+        <li>Push notification in the app</li>
+        <li>Updated &ldquo;Last updated&rdquo; date</li>
+        <li>Release notes in App Store</li>
     </ul>
 
-    <h2>Encryption</h2>
-    <p>All connections use TLS / HTTPS. Backend credentials are stored in iOS Keychain. The app uses only standard Apple cryptography (<code>ITSAppUsesNonExemptEncryption = false</code>).</p>
-
-    <h2>Changes</h2>
-    <p>If we change this policy, the "Last updated" date will change. Material changes will be announced in release notes.</p>
+    <h2>Supervisory authority</h2>
+    <p>If you are not satisfied with how we handle your data, you have the right to lodge a complaint with your local data protection authority. In Czech Republic: <strong>&Uacute;OO&Uacute;</strong> (&Uacute;&#345;ad pro ochranu osobn&iacute;ch &uacute;daj&#367;), <a href="https://www.uoou.cz">www.uoou.cz</a>.</p>
 
     <h2>Contact</h2>
-    <p><strong>Developer:</strong> Ondrej Hladik (FxLooper)<br>
-    <strong>Email:</strong> <a href="mailto:fxlooper.business@gmail.com">fxlooper.business@gmail.com</a></p>
+    <p><strong>Developer:</strong> Ond&#345;ej Hlad&iacute;k (FxLooper)<br>
+    <strong>Email:</strong> <a href="mailto:fxlooper.business@gmail.com">fxlooper.business@gmail.com</a><br>
+    <strong>Privacy URL:</strong> <a href="https://fxlooper.github.io/nova-privacy">https://fxlooper.github.io/nova-privacy</a><br>
+    <strong>Address:</strong> Czech Republic, EU</p>
 </div>
 </body>
 </html>
